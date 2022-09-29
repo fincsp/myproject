@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Kalkulator Web</title>
+
+</head>
+
+<body bgcolor="#C6EB94">
+
+<form id="form1" name="form1" method="post" action="">
+
+<table width="120" border="0" align="center" cellpadding="1" cellspacing="1">
+
+<tr>
+
+<td colspan="4" align="center" valign="top"><input type="text" name="layar" id="layar" align="right" /></td>
+
+</tr>
+
+<tr>
+
+<td align="center" valign="middle"><input type="button" name="1" value="1" onclick="return InputData(1)" /></td>
+
+<td align="center" valign="middle"><input type="button" name="2" value="2" onclick="return InputData(2)" /></td>
+
+<td align="center" valign="middle"><input type="button" name="3" value="3" onclick="return InputData(3)" /></td>
+
+<td align="center" valign="middle"><input type="button" name="tambah" value="+" onclick="return pilTambah()" /></td>
+
+</tr>
+
+<tr>
+
+<td align="center" valign="middle"><input type="button" name="4" value="4" onclick="return InputData(4)" /></td>
+
+<td align="center" valign="middle"><input type="button" name="5" value="5" onclick="return InputData(5)" /></td>
+
+<td align="center" valign="middle"><input type="button" name="6" value="6" onclick="return InputData(6)" /></td>
+
+<td align="center" valign="middle"><input type="button" name="kurang" value="-" onclick="return pilKurang()" /></td>
+
+</tr>
+
+<tr>
+
+<td align="center" valign="middle"><input type="button" name="7" value="7" onclick="return InputData(7)" /></td>
+
+<td align="center" valign="middle"><input type="button" name="8" value="8" onclick="return InputData(8)" /></td>
+
+<td align="center" valign="middle"><input type="button" name="9" value="9" onclick="return InputData(9)" /></td>
+
+<td align="center" valign="middle"><input type="button" name="kali" value="x" onclick="return pilKali()" /></td>
+
+</tr>
+
+<tr>
+
+<td align="center" valign="middle"><input type="button" name="pm" value="±" onclick="return plusMinus()" /></td>
+
+<td align="center" valign="middle"><input type="button" name="0" value="0" onclick="return InputData(0)" /></td>
+
+<td align="center" valign="middle"><input type="button" name="." value="." onclick="return InputData('.')" /></td>
+
+<td align="center" valign="middle"><input type="button" name="bagi" value="/" onclick="return pilBagi()" /></td>
+
+</tr>
+
+<tr>
+
+<td align="center" valign="middle"> </td>
+
+<td align="center" valign="middle"> </td>
+
+<td colspan="2" align="center" valign="middle"><input type="button" name="hasil" value="=" onclick="return Hasil()" /></td>
+
+</tr>
+
+</table>
+
+</form>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+function InputData(x){
+
+var nil = x;
+
+document.form1.layar.value=document.form1.layar.value+nil;
+
+}
+
+var nil1;
+
+var nil2;
+
+var op;
+
+function pilTambah(){
+
+op = 'add';
+
+nil1 = parseFloat(document.form1.layar.value);
+
+document.form1.layar.value="";
+
+}
+
+function pilKurang(){
+
+op = 'min';
+
+nil1 = parseFloat(document.form1.layar.value);
+
+document.form1.layar.value="";
+
+}
+
+function pilKali(){
+
+op = 'kali';
+
+nil1 = parseFloat(document.form1.layar.value);
+
+document.form1.layar.value="";
+
+}
+
+function pilBagi(){
+
+op = 'bagi';
+
+nil1 = parseFloat(document.form1.layar.value);
+
+document.form1.layar.value="";
+
+}
+
+function Hasil(){
+
+nil2 = parseFloat(document.form1.layar.value);
+
+
+if(op=='add'){
+
+document.form1.layar.value = nil1 + nil2;
+
+}else if(op=='min'){
+
+document.form1.layar.value = nil1 - nil2;
+
+}else if(op=='kali'){
+
+document.form1.layar.value = nil1 * nil2;
+
+}else if(op=='bagi'){
+
+document.form1.layar.value = nil1 / nil2;
+
+}
+
+}
+</script>
